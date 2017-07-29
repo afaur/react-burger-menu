@@ -117,7 +117,11 @@ export default (styles) => {
       let width = this.props.width;
       if (typeof width !== 'string') width = `${width}px`;
 
-      return style(this.state.isOpen, width, this.props.right, index);
+      return style(
+        this.state.isOpen, width,
+        this.props.right || false,
+        this.props.zIndex || 3, index
+      );
     }
 
     listenForClose(e) {
